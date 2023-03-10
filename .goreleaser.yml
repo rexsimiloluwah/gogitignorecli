@@ -1,0 +1,35 @@
+builds:
+  - binary: gogitignore
+    goos:
+      - darwin
+      - linux
+      - freebsd 
+      - windows
+    goarch:
+      - amd64
+      - arm64
+      - arm
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -mod=readonly
+
+release:
+  prerelease: auto
+
+universal_binaries:
+  - replace: true
+
+brews:
+  -
+    name: gogitignorecli
+    homepage: "https://github.com/rexsimiloluwah/gogitignorecli"
+    tap:
+      owner: rexsimiloluwah
+      name: gogitignorecli
+    commit_author:
+      name: rexsimiloluwah
+      email: rexsimiloluwa@gmail.com
+
+checksum:
+  name_template: 'checksums.txt'
